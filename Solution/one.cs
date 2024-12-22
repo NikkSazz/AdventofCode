@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 public class One
 {
-    static void Solution(string[] input)
+    public static void Solution(string[] input)
     {
         List<int> left = new List<int>();
         List<int> right = new List<int>();
