@@ -1,4 +1,4 @@
-﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -6,8 +6,9 @@
     <OutputType>Exe</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
     <AssemblyName>ConsoleApplication</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -19,6 +20,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +30,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <RootNamespace>AdventSazonov</RootNamespace>
@@ -78,14 +81,34 @@
     <None Include=".vs\ProjectSettings.json" />
     <None Include=".vs\slnx.sqlite" />
     <None Include=".vs\VSWorkspaceState.json" />
+    <None Include="app.config" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="main.cs" />
-    <Compile Include="Solution\one.cs" />
+    <Compile Include="2024\main.cs" />
+    <Compile Include="2024\Solution\two.cs" />
+    <Compile Include="2024\Solution\one.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Inputs\one.txt" />
+    <Content Include="2024\Inputs\eight.txt" />
+    <Content Include="2024\Inputs\fifteenDirections.txt" />
+    <Content Include="2024\Inputs\fifteenMap.txt" />
+    <Content Include="2024\Inputs\fifteenTestOneDirections.txt" />
+    <Content Include="2024\Inputs\fifteenTestOneMap.txt" />
+    <Content Include="2024\Inputs\fiveRules.txt" />
+    <Content Include="2024\Inputs\fiveUpdates.txt" />
+    <Content Include="2024\Inputs\four.txt" />
+    <Content Include="2024\Inputs\fourteen.txt" />
+    <Content Include="2024\Inputs\nine.txt" />
+    <Content Include="2024\Inputs\one.txt" />
+    <Content Include="2024\Inputs\seven.txt" />
+    <Content Include="2024\Inputs\six.txt" />
+    <Content Include="2024\Inputs\ten.txt" />
+    <Content Include="2024\Inputs\three.txt" />
+    <Content Include="2024\Inputs\twentyone.txt" />
+    <Content Include="2024\Inputs\twentyoneExample.txt" />
+    <Content Include="2024\Inputs\twentytwo.txt" />
+    <Content Include="2024\Inputs\two.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".git\objects\info\" />
