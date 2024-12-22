@@ -86,6 +86,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="2024\main.cs" />
+    <Compile Include="2024\Solution\twentytwo.cs" />
+    <Compile Include="2024\Solution\nine.cs" />
     <Compile Include="2024\Solution\two.cs" />
     <Compile Include="2024\Solution\one.cs" />
   </ItemGroup>
