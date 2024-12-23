@@ -8,12 +8,12 @@ public class main
 {
     static void Main()
     {
-        /*Console.Write("Which day would you like to see: ");
+        Console.Write("Which day would you like to see: ");
         var request = Console.ReadLine();
-        int dayRequest = int.Parse(request);*/
-        int workingOnDay = 22;
+        int dayRequest = int.Parse(request);
+        //int workingOnDay = 22;
 
-        switch (workingOnDay - 1)
+        switch (dayRequest - 1)
         {
             case 0:
                 string[] oneInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\one.txt"));
@@ -81,16 +81,6 @@ public class main
             case 23:
                 break;
             case 24:
-                break;
-            case 25:
-                Console.WriteLine("sbyte:\t" + sbyte.MaxValue.ToString());
-                Console.WriteLine("byte:\t" + byte.MaxValue.ToString());
-                Console.WriteLine("short:\t" + short.MaxValue.ToString());
-                Console.WriteLine("ushort:\t" + ushort.MaxValue.ToString());
-                Console.WriteLine("int:\t" + int.MaxValue.ToString());
-                Console.WriteLine("uint:\t" + uint.MaxValue.ToString());
-                Console.WriteLine("long:\t" + long.MaxValue.ToString());
-                Console.WriteLine("ulong:\t" + ulong.MaxValue.ToString());
                 break;
         }
 

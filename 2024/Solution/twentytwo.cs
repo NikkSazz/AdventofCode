@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace AdventSazonov._2024.Solution
 {
@@ -17,9 +18,10 @@ namespace AdventSazonov._2024.Solution
          * Good luck :)
          * Nikolai Dec 2024
          */
-        public static void Solution(string[] inputtesting)
+        public static void Solution(string[] input)
         {
-            string[] input =
+            Stopwatch sw = Stopwatch.StartNew();
+            string[] inputtest =
             {
                 "1",
                 "2",
@@ -48,48 +50,36 @@ namespace AdventSazonov._2024.Solution
 
                 priceList.RemoveAt(priceList.Count - 1); // not used in the example soo..
                 priceArray[arrIndex] = new List<sbyte>();
-                priceArray[arrIndex] = priceList;
+                priceArray[arrIndex].AddRange(priceList);
                 arrIndex++;
             }
 
-            Console.WriteLine($"\nDay Twenty One Part One: {sum}");
+            Console.WriteLine($"\nDay Twenty One Part One: {sum}\tElsapsed: {sw.Elapsed}");
             int bananaMax = PartTwo(priceArray);
-            Console.WriteLine($"\nDay Twenty One Part Two: {bananaMax}");
+            Console.WriteLine($"\nDay Twenty One Part Two: {bananaMax}\tElsapsed: {sw.Elapsed}");
+            sw.Stop();
         }
 
         static int PartTwo(List<sbyte>[] priceArray)
         {
-            //using the term div, as in derive for the changes in price over each secret. the four digit number
             int maxBananna = -1;
             sbyte[][] codesArray = new sbyte[priceArray.Length][];
-            // Populate codesArray
             codesArray = PopulateCodeArray(priceArray);
 
-            for (int salesman = 0; salesman < priceArray.Length; salesman++)
+            // Every pattern of the first salesman
+            List<sbyte[]> codesList = new List<sbyte[]>();
+            for (int salesmanIndex = 4; salesmanIndex < priceArray[0].Count; salesmanIndex++)
             {
-                // To distinguish salesmen
-                Console.ForegroundColor = salesman % 2 == 0 ? ConsoleColor.Red : ConsoleColor.Green;
-
-                int salesmanMaxIndex = 4;
-                int salesmanMax = priceArray[salesman][salesmanMaxIndex];
-                Console.WriteLine($"Initmax: {salesmanMax} at {salesmanMaxIndex}");
-
-                for (int i = 4; i < priceArray[salesman].Count; i++)
+                sbyte[] code = FillCodeAtNPrice(codesArray[0], salesmanIndex);
+                if (codesList.Contains(code)) { continue; }
+                //PrintCode(code, priceArray[0][salesmanIndex]);
+                int newVal = GoThroughEverySalesman(code, codesArray, priceArray);
+                if(newVal > maxBananna)
                 {
-                    sbyte cmpForHighestVal = priceArray[salesman][i];
-                    if (salesmanMax < cmpForHighestVal)
-                    {
-                        Console.WriteLine($"Changed Highest Value of {salesmanMax} at {salesmanMaxIndex} to {cmpForHighestVal} at {i}");
-                        salesmanMaxIndex = i;
-                        salesmanMax = cmpForHighestVal;
-                    }
+                    maxBananna = newVal;
                 }
-
-                var codeAtMax = FillCodeAtNPrice(codesArray[salesman], salesmanMaxIndex);
-                PrintCode(codeAtMax, salesmanMax);
-                maxBananna = Math.Max(maxBananna, GoThroughEverySalesman(codeAtMax, codesArray, priceArray));
             }
-            Console.ForegroundColor = ConsoleColor.Gray;
+            // Note this code may not work if the first buyer does not have the correct combination of codes
             return maxBananna;
         }
 
@@ -98,26 +88,40 @@ namespace AdventSazonov._2024.Solution
             Console.WriteLine($"Code for {val} is {code[0]}, {code[1]}, {code[2]}, {code[3]}");
         }
 
-        static int GetCodeIndex(sbyte[] code, sbyte[][] codesArray)
+        static int GetCodeIndex(sbyte[] code, sbyte[][] codesArray, int n)
         {
-            return -1;
+            // Ignore first value of codesarray[]
+            for (int i = 1; i <= codesArray[0].Length - 4; i++)
+            {
+                if (codesArray[n][i] == code[0])
+                {
+                    if (codesArray[n][i + 1] == code[1])
+                    {
+                        if (codesArray[n][i + 2] == code[2])
+                        {
+                            if (codesArray[n][i + 3] == code[3])
+                            {
+                                return i;
+                            }
+                        }
+                    }
+                }
+            }
+            return -1; //DNE
         }
 
         static int GoThroughEverySalesman(sbyte[] code, sbyte[][] codesArray, List<sbyte>[] priceArray)
         {
             int sum = 0;
-            // Goes through each salesmans prices, and gets the price at the code Index
-            // If one of the salesmen dont have such code Index. Return -1
             for (int salesman = 0; salesman < priceArray.Length; salesman++)
             {
-                int codeIndex = GetCodeIndex(code, codesArray);
-                if(codeIndex >= 0)
+                int codeIndex = GetCodeIndex(code, codesArray, salesman);
+                if (codeIndex >= 0)
                 {
-
+                    sum += priceArray[salesman][codeIndex + 3];
                 }
             }
-
-
+            //Console.WriteLine("Sum is " + sum);
             return sum;
         }
 
