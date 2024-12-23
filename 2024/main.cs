@@ -1,6 +1,7 @@
 ﻿using AdventSazonov._2024.Solution;
 using AdventSazonov.Solution;
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 public class main
