@@ -34,7 +34,7 @@ namespace AdventSazonov._2024.Solution
             long sum = 0;
             for (int i = 1; i < file.Length; i++)
             {
-                sum += int.Parse(file[i].ToString()) * i;
+                sum += long .Parse(file[i].ToString()) * i;
             }
             return sum;
         }

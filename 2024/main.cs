@@ -24,10 +24,18 @@ public class main
                 Two.Solution(twoInput);
                 break;
             case 2:
+                string[] threeInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\three.txt"));
+                Three.Solution(threeInput);
                 break;
             case 3:
+                string[] fourInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\four.txt"));
+                Four.Solution(fourInput);
                 break;
             case 4:
+                string[] fiveRules= File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\fiveRules.txt"));
+                string[] fiveUpdates = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\fiveUpdates.txt"));
+                Five.Solution(fiveRules, fiveUpdates);
+
                 break;
             case 5:
                 break;
@@ -39,7 +47,6 @@ public class main
                 string[] nineInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\nine.txt"));
                 string[] nineTest = { "2333133121414131402" };
                 Nine.Solution(nineInput[0]);
-                Console.WriteLine("Wrong Answer sad :(");
                 break;
             case 9:
                 break;
