@@ -1,7 +1,6 @@
 ﻿using AdventSazonov._2024.Solution;
 using AdventSazonov.Solution;
 using System;
-using System.Collections.Generic;
 using System.IO;
 
 public class main
@@ -11,7 +10,7 @@ public class main
         Console.Write("Which day would you like to see: ");
         var request = Console.ReadLine();
         int dayRequest = int.Parse(request);
-        //int workingOnDay = 22;
+        Console.ForegroundColor = ConsoleColor.DarkMagenta;
 
         switch (dayRequest - 1)
         {
@@ -32,10 +31,9 @@ public class main
                 Four.Solution(fourInput);
                 break;
             case 4:
-                string[] fiveRules= File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\fiveRules.txt"));
+                string[] fiveRules = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\fiveRules.txt"));
                 string[] fiveUpdates = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\fiveUpdates.txt"));
                 Five.Solution(fiveRules, fiveUpdates);
-
                 break;
             case 5:
                 break;
@@ -51,6 +49,8 @@ public class main
             case 9:
                 break;
             case 10:
+                string elevenInput = "1750884 193 866395 7 1158 31 35216 0";
+                Eleven.Solution(elevenInput);
                 break;
             case 11:
                 break;
@@ -73,7 +73,7 @@ public class main
             case 20:
                 break;
             case 21:
-                string[] twentytwoInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\source\repos\AdventofCode2024\twentytwo.txt"));
+                string[] twentytwoInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\twentytwo.txt"));
                 string[] ttwotest =
                 {
                         "1",
@@ -86,10 +86,14 @@ public class main
             case 22:
                 break;
             case 23:
+                string[] twentyfourInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\24.txt"));
+                string[] twentyfourTest = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\24Test.txt"));
+                TwentyFour.Solution(twentyfourTest);
                 break;
             case 24:
                 break;
         }
+        Console.ForegroundColor = ConsoleColor.Gray;
 
         Console.WriteLine("\nPress any key twice to exit");
         Console.ReadKey();
