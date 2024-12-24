@@ -86,10 +86,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="2024\main.cs" />
-    <Compile Include="2024\Solution\twentytwo.cs" />
-    <Compile Include="2024\Solution\nine.cs" />
-    <Compile Include="2024\Solution\two.cs" />
-    <Compile Include="2024\Solution\one.cs" />
+    <Compile Include="2024\twentytwo.cs" />
+    <Compile Include="2024\nine.cs" />
+    <Compile Include="2024\two.cs" />
+    <Compile Include="2024\one.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="2024\Inputs\eight.txt" />
