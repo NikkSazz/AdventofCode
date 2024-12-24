@@ -85,14 +85,14 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="2024\five.cs" />
-    <Compile Include="2024\four.cs" />
+    <Compile Include="2024\day5.cs" />
+    <Compile Include="2024\day4.cs" />
     <Compile Include="2024\main.cs" />
-    <Compile Include="2024\three.cs" />
+    <Compile Include="2024\day3.cs" />
     <Compile Include="2024\twentytwo.cs" />
-    <Compile Include="2024\nine.cs" />
-    <Compile Include="2024\two.cs" />
-    <Compile Include="2024\one.cs" />
+    <Compile Include="2024\day9.cs" />
+    <Compile Include="2024\day2.cs" />
+    <Compile Include="2024\day1.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="2024\Inputs\eight.txt" />
