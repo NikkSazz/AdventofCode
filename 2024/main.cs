@@ -10,8 +10,6 @@ public class main
         Console.Write("Which day would you like to see: ");
         var request = Console.ReadLine();
         int dayRequest = int.Parse(request);
-        Console.ForegroundColor = ConsoleColor.DarkMagenta;
-
         switch (dayRequest - 1)
         {
             case 0:
@@ -88,12 +86,11 @@ public class main
             case 23:
                 string[] twentyfourInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\24.txt"));
                 string[] twentyfourTest = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\24Test.txt"));
-                TwentyFour.Solution(twentyfourTest);
+                TwentyFour.Solution(twentyfourInput);
                 break;
             case 24:
                 break;
         }
-        Console.ForegroundColor = ConsoleColor.Gray;
 
         Console.WriteLine("\nPress any key twice to exit");
         Console.ReadKey();
