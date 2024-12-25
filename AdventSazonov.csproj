@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="2024\day24.cs" />
+    <Compile Include="2024\day25.cs" />
     <Compile Include="2024\Eleven.cs" />
     <Compile Include="2024\day5.cs" />
     <Compile Include="2024\day4.cs" />
@@ -113,7 +114,6 @@
     <Content Include="2024\Inputs\ten.txt" />
     <Content Include="2024\Inputs\24.txt" />
     <Content Include="2024\Inputs\25.txt" />
-    <Content Include="2024\Inputs\25Test.txt" />
     <Content Include="2024\Inputs\three.txt" />
     <Content Include="2024\Inputs\twentyone.txt" />
     <Content Include="2024\Inputs\twentyoneExample.txt" />
