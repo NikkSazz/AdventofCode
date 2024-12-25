@@ -111,8 +111,9 @@
     <Content Include="2024\Inputs\seven.txt" />
     <Content Include="2024\Inputs\six.txt" />
     <Content Include="2024\Inputs\ten.txt" />
-    <Content Include="2024\Inputs\24Test.txt" />
     <Content Include="2024\Inputs\24.txt" />
+    <Content Include="2024\Inputs\25.txt" />
+    <Content Include="2024\Inputs\25Test.txt" />
     <Content Include="2024\Inputs\three.txt" />
     <Content Include="2024\Inputs\twentyone.txt" />
     <Content Include="2024\Inputs\twentyoneExample.txt" />

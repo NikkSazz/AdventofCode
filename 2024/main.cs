@@ -85,10 +85,12 @@ public class main
                 break;
             case 23:
                 string[] twentyfourInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\24.txt"));
-                string[] twentyfourTest = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\24Test.txt"));
                 TwentyFour.Solution(twentyfourInput);
                 break;
             case 24:
+                string[] twentyfiveInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\25.txt"));
+                string[] twentyfiveTest = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\25Test.txt"));
+
                 break;
         }
 
