@@ -5,13 +5,25 @@ using System.Linq;
 
 internal class TwentyFour
 {
+    private static Dictionary<string, byte> registers = new Dictionary<string, byte>();
 
-    static Dictionary<string, byte> registers = new Dictionary<string, byte>();
     public static void Solution(string[] input)
     {
         Stopwatch sw = Stopwatch.StartNew();
         FillDictionaryWithInitialValues(input);
 
+        PartOneFillDictionary(input);
+
+        var sortedDict = registers.OrderBy(pair => pair.Key).ToDictionary(pair => pair.Key, pair => pair.Value);
+        string pOneBinary = BinaryZWires(sortedDict);
+        var pOneDecimal = Convert.ToInt64(pOneBinary, 2);
+        Console.WriteLine($"\nDay Twenty Four Part One: {pOneDecimal}\tElapsed: {sw.Elapsed}");
+
+        sw.Stop();
+    }
+
+    static void PartOneFillDictionary(string[] input)
+    {
         int startIndex = GetGateConnectionsStartIndex(input);
         for (int i = input.Length - 1; input[i] != ""; i--)
         {
@@ -22,12 +34,6 @@ internal class TwentyFour
                 registers[outGate] = GetGateValue(outGate, input, i, startIndex);
             }
         }
-
-        string pOneBinary = BinaryZWires(registers);
-        Console.WriteLine(pOneBinary);
-        var pOneDecimal = Convert.ToInt64(pOneBinary, 2);
-        Console.WriteLine($"\nDay Twenty Four Part One: {pOneDecimal}\tElapsed: {sw.Elapsed}");
-        sw.Stop();
     }
 
     static byte GetGateValue(string outGate, string[] input, int i, int startIndex)
@@ -48,21 +54,35 @@ internal class TwentyFour
         }
 
         string operation = input[i].Substring(input[i].IndexOf(" ") + 1, 3);
-        Console.WriteLine(firstGate + " " + operation + " " + secondGate + " " + outGate);
-        if (operation == "AND")
+        switch (OperationCase(operation))
         {
-            return (byte)(registers[firstGate] & registers[secondGate]);
-        }
-        if (operation == "OR ")
-        {
-            return (byte)(registers[firstGate] | registers[secondGate]);
-        }
-        if (operation == "XOR")
-        {
-            return (byte)(registers[firstGate] ^ registers[secondGate]);
+            case 0:
+                return (byte)(registers[firstGate] & registers[secondGate]);
+            case 1:
+                return (byte)(registers[firstGate] | registers[secondGate]);
+            case 2:
+                return (byte)(registers[firstGate] ^ registers[secondGate]);
         }
 
         throw new Exception("Did not pass logic test");
+    }
+
+    static int OperationCase(string operation)
+    {
+        if (operation == "AND")
+        {
+            return 0;
+        }
+        if (operation == "OR ")
+        {
+            return 1;
+        }
+        if (operation == "XOR")
+        {
+            return 2;
+        }
+
+        throw new Exception("Cant find correct operation: " + operation);
     }
 
     static int FindIndexFor(string what, int startIndex, string[] input)
@@ -75,18 +95,16 @@ internal class TwentyFour
                 return i;
             }
         }
+
         throw new Exception("did not find an index for " + what);
     }
 
-    static string BinaryZWires(Dictionary<string, byte> dictionary)
+    static string BinaryZWires(Dictionary<string, byte> sortedDict)
     {
-        var sortedDict = dictionary.OrderBy(pair => pair.Key).ToDictionary(pair => pair.Key, pair => pair.Value);
-
         string ansBinary = "";
         foreach (var v in sortedDict.Reverse())
         {
             if (!v.Key.StartsWith("z")) { break; }
-            Console.WriteLine(v);
             ansBinary += v.Value.ToString();
         }
         return ansBinary;
@@ -112,6 +130,7 @@ internal class TwentyFour
                 return i + 1;
             }
         }
+
         throw new Exception("did not find start Index");
     }
 }
