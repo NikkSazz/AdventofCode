@@ -85,6 +85,8 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="2024\day12.cs" />
+    <Compile Include="2024\day10.cs" />
     <Compile Include="2024\day24.cs" />
     <Compile Include="2024\day25.cs" />
     <Compile Include="2024\Eleven.cs" />
@@ -98,7 +100,7 @@
     <Compile Include="2024\day1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="2024\Inputs\eight.txt" />
+    <Content Include="2024\Inputs\8.txt" />
     <Content Include="2024\Inputs\fifteenDirections.txt" />
     <Content Include="2024\Inputs\fifteenMap.txt" />
     <Content Include="2024\Inputs\fifteenTestOneDirections.txt" />
@@ -111,9 +113,10 @@
     <Content Include="2024\Inputs\one.txt" />
     <Content Include="2024\Inputs\seven.txt" />
     <Content Include="2024\Inputs\six.txt" />
-    <Content Include="2024\Inputs\ten.txt" />
+    <Content Include="2024\Inputs\10.txt" />
     <Content Include="2024\Inputs\24.txt" />
     <Content Include="2024\Inputs\25.txt" />
+    <Content Include="2024\Inputs\12.txt" />
     <Content Include="2024\Inputs\three.txt" />
     <Content Include="2024\Inputs\twentyone.txt" />
     <Content Include="2024\Inputs\twentyoneExample.txt" />

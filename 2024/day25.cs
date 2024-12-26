@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
@@ -23,7 +22,7 @@ internal class TwentyFive
             }
         }
 
-        Console.WriteLine($"\nDay Twenty Five Part One Solution: {unique}\tElapsed: {sw.Elapsed}");
+        Console.WriteLine($"\nDay Twenty Five Solution: {unique}\tElapsed: {sw.Elapsed}");
         sw.Stop();
     }
 

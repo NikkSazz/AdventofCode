@@ -7,9 +7,12 @@ public class main
 {
     static void Main()
     {
+        /*
         Console.Write("Which day would you like to see: ");
         var request = Console.ReadLine();
         int dayRequest = int.Parse(request);
+        */
+        int dayRequest = 10;
         switch (dayRequest - 1)
         {
             case 0:
@@ -45,6 +48,8 @@ public class main
                 Nine.Solution(nineInput[0]);
                 break;
             case 9:
+                string[] tenInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\10.txt"));
+                Ten.Solution(tenInput);
                 break;
             case 10:
                 string elevenInput = "1750884 193 866395 7 1158 31 35216 0";
@@ -89,7 +94,6 @@ public class main
                 break;
             case 24:
                 string[] twentyfiveInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\25.txt"));
-                string[] twentyfiveTest = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\25Test.txt"));
                 TwentyFive.Solution(twentyfiveInput);
                 break;
         }
