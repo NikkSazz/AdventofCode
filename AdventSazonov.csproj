@@ -89,7 +89,7 @@
     <Compile Include="2024\day10.cs" />
     <Compile Include="2024\day24.cs" />
     <Compile Include="2024\day25.cs" />
-    <Compile Include="2024\Eleven.cs" />
+    <Compile Include="2024\day11.cs" />
     <Compile Include="2024\day5.cs" />
     <Compile Include="2024\day4.cs" />
     <Compile Include="2024\main.cs" />
