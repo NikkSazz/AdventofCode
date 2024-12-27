@@ -12,7 +12,7 @@ public class main
         var request = Console.ReadLine();
         int dayRequest = int.Parse(request);
         */
-        int dayRequest = 10;
+        int dayRequest = 12;
         switch (dayRequest - 1)
         {
             case 0:
@@ -42,7 +42,7 @@ public class main
                 break;
             case 7:
                 break;
-            case 8:
+            case 8:    // Incomplete
                 string[] nineInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\nine.txt"));
                 string[] nineTest = { "2333133121414131402" };
                 Nine.Solution(nineInput[0]);
@@ -51,11 +51,13 @@ public class main
                 string[] tenInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\10.txt"));
                 Ten.Solution(tenInput);
                 break;
-            case 10:
+            case 10:    // Incomplete
                 string elevenInput = "1750884 193 866395 7 1158 31 35216 0";
                 Eleven.Solution(elevenInput);
                 break;
             case 11:
+                string[] twelveInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\12.txt"));
+                Twelve.Solution(twelveInput);
                 break;
             case 12:
                 break;
@@ -77,18 +79,11 @@ public class main
                 break;
             case 21:
                 string[] twentytwoInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\twentytwo.txt"));
-                string[] ttwotest =
-                {
-                        "1",
-                        "10",
-                        "100",
-                        "2024"
-                    };
                 TwentyTwo.Solution(twentytwoInput);
                 break;
             case 22:
                 break;
-            case 23:
+            case 23:    // Incomplete
                 string[] twentyfourInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\24.txt"));
                 TwentyFour.Solution(twentyfourInput);
                 break;
