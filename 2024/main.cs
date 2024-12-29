@@ -1,4 +1,5 @@
-﻿using AdventSazonov._2024.Solution;
+﻿using AdventSazonov._2024;
+using AdventSazonov._2024.Solution;
 using AdventSazonov.Solution;
 using System;
 using System.IO;
@@ -16,24 +17,24 @@ public class main
         switch (dayRequest - 1)
         {
             case 0:
-                string[] oneInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\one.txt"));
+                string[] oneInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\1.txt"));
                 One.Solution(oneInput);
                 break;
             case 1:
-                string[] twoInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\two.txt"));
+                string[] twoInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\2.txt"));
                 Two.Solution(twoInput);
                 break;
             case 2:
-                string[] threeInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\three.txt"));
+                string[] threeInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\3.txt"));
                 Three.Solution(threeInput);
                 break;
             case 3:
-                string[] fourInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\four.txt"));
+                string[] fourInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\4.txt"));
                 Four.Solution(fourInput);
                 break;
             case 4:
-                string[] fiveRules = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\fiveRules.txt"));
-                string[] fiveUpdates = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\fiveUpdates.txt"));
+                string[] fiveRules = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\5Rules.txt"));
+                string[] fiveUpdates = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\5Updates.txt"));
                 Five.Solution(fiveRules, fiveUpdates);
                 break;
             case 5:
@@ -43,7 +44,7 @@ public class main
             case 7:
                 break;
             case 8:    // Incomplete
-                string[] nineInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\nine.txt"));
+                string[] nineInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\9.txt"));
                 string[] nineTest = { "2333133121414131402" };
                 Nine.Solution(nineInput[0]);
                 break;
@@ -60,6 +61,8 @@ public class main
                 Twelve.Solution(twelveInput);
                 break;
             case 12:
+                string[] thirteenInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\12.txt"));
+                Thirteen.Solution();
                 break;
             case 13:
                 break;
