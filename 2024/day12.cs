@@ -3,6 +3,7 @@
 internal class Twelve
 {
     static bool[,] checkedMap;
+    static bool[,] secondMap;
     public static void Solution(string[] inputt)
     {
         string[] input =
@@ -19,10 +20,11 @@ internal class Twelve
             "MMMISSJEEE"
 
         };
-        checkedMap = new bool[input.Length, input[0].Length];
+        int inputLen0 = input.Length;
+        int inputLen1 = input[0].Length;
+        checkedMap = new bool[inputLen0, inputLen1];
         int price = 0;
         int discountedPrice = 0;
-        Console.WriteLine("Part Two");
         for (int y = 0; y < input.Length; y++)
         {
             for (int x = 0; x < input[y].Length; x++)
@@ -34,19 +36,13 @@ internal class Twelve
                     var (area, perimeter) = GetAreaPerimiterOfRegion(type, input, y, x);
                     price += area * perimeter;
 
-                    int sides = CalculateNumberofSides(input, y, x);
-                    //Console.WriteLine($" - A region of {type} plants with price {t.area} * {sides} = {t.area * sides}");
-                    discountedPrice += sides * area;
+                    //Console.WriteLine($" - A region of {type} plants with price {area} * {sides} = {area * sides}");
+                    //discountedPrice += sides * area;
                 }
             }
         }
         Console.WriteLine($"\nDay Twelve Part One Solution: {price}");
         Console.WriteLine($"\nDay Twelve Part Two Solution: {discountedPrice}");
-    }
-
-    static int CalculateNumberofSides(string[] input, int yS, int xS)
-    {
-        return 1;
     }
 
     static (int area, int perimeter) GetAreaPerimiterOfRegion(char type, string[] input, int y, int x)
