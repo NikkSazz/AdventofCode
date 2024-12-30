@@ -1,7 +1,14 @@
-﻿using System;
-
+﻿using MathNet.Numerics.LinearAlgebra;
+using System;
 internal class Thirteen
 {
+    public static void Solution(string[] input)
+    {
+        var vector = Vector<double>.Build.DenseOfArray(new double[] { 1.0, 2.0, 3.0 });
+        Console.WriteLine($"Vector: {vector.ToString()}");
+    }
+
+    /*  OLD VERSION, DOES NOT WORK
     public static void Solution(string[] input)
     {
         string bA = "", bB = "", bP = "";
@@ -105,4 +112,5 @@ internal class Thirteen
         }
         return (minA, bestB);
     }
+    */
 }
