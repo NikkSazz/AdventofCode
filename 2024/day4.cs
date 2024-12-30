@@ -27,7 +27,7 @@ namespace AdventSazonov.Solution
                 }
             }
             Console.WriteLine("\nDay Four Part One Solution: " + occurences);
-            //Parte 2
+            //Part 2
             int cross = 0;
             for (int i = 1; i < input.Length - 1; i++)
             {

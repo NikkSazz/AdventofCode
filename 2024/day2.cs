@@ -45,8 +45,8 @@ internal class Two
         var stringList = s.Split(' ');
         foreach (string k in stringList)
         {
-            check.Add(Int32.Parse(k));
-            cmp.Add(Int32.Parse(k));
+            check.Add(int.Parse(k));
+            cmp.Add(int.Parse(k));
         }
         cmp.Sort();
         if (!Enumerable.SequenceEqual(check, cmp)) // check is not all increasing or all decreasing

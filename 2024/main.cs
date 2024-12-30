@@ -8,12 +8,10 @@ public class main
 {
     static void Main()
     {
-        /*
         Console.Write("Which day would you like to see: ");
         var request = Console.ReadLine();
         int dayRequest = int.Parse(request);
-        */
-        int dayRequest = 12;
+        //int dayRequest = 13;
         switch (dayRequest - 1)
         {
             case 0:
@@ -38,10 +36,16 @@ public class main
                 Five.Solution(fiveRules, fiveUpdates);
                 break;
             case 5:
+                string[] sixInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\6.txt"));
+                Six.Solution(sixInput);
                 break;
             case 6:
+                string[] sevenInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\7.txt"));
+                Seven.Solution(sevenInput);
                 break;
             case 7:
+                string[] eightInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\8.txt"));
+                Eight.Solution(eightInput);
                 break;
             case 8:    // Incomplete
                 string[] nineInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\9.txt"));
@@ -61,8 +65,26 @@ public class main
                 Twelve.Solution(twelveInput);
                 break;
             case 12:
-                string[] thirteenInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\12.txt"));
-                Thirteen.Solution();
+                string[] thirteenInput = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\User\Source\Repos\Advent24Saz\2024\Inputs\13.txt"));
+                string[] thirteenTest =
+                {
+                    "Button A: X+94, Y+34",
+                    "Button B: X+22, Y+67",
+                    "Prize: X=8400, Y=5400",
+                    "",
+                    "Button A: X+26, Y+66",
+                    "Button B: X+67, Y+21",
+                    "Prize: X=12748, Y=12176",
+                    "",
+                    "Button A: X+17, Y+86",
+                    "Button B: X+84, Y+37",
+                    "Prize: X=7870, Y=6450",
+                    "",
+                    "Button A: X+69, Y+23",
+                    "Button B: X+27, Y+71",
+                    "Prize: X=18641, Y=10279"
+                };
+                Thirteen.Solution(thirteenInput);
                 break;
             case 13:
                 break;
