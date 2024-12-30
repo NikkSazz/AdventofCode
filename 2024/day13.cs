@@ -4,8 +4,50 @@ internal class Thirteen
 {
     public static void Solution(string[] input)
     {
+        Console.WriteLine("13");
+    }
+
+    public static void TestMathNet_Numerics_LinearAlgebra(string[] args)
+    {
+
+        // Create a vector
         var vector = Vector<double>.Build.DenseOfArray(new double[] { 1.0, 2.0, 3.0 });
-        Console.WriteLine($"Vector: {vector.ToString()}");
+        Console.WriteLine("Vector: ");
+        Console.WriteLine(vector);
+
+
+        // Create a matrix
+        var matrix = Matrix<double>.Build.DenseOfArray(new double[,] {
+            { 1.0, 2.0 },
+            { 3.0, 4.0 }
+        });
+        Console.WriteLine("\nMatrix:  ");
+        Console.WriteLine(matrix);
+
+        // Matrix multiplication example
+        var result = matrix * vector.SubVector(0, 2);
+        Console.WriteLine("\nMatrix * Subvector:");
+        Console.WriteLine(result);
+
+
+        //Solving a System of Linear Equations
+        Console.ForegroundColor = ConsoleColor.DarkYellow;
+
+        // Coefficient matrix (A)
+        var matrixA = Matrix<double>.Build.DenseOfArray(new double[,] {
+            { 3, -2, 5 },
+            { 2, 1, -1 },
+            { 1, 2, 3 }
+        });
+
+        // Constant vector (b)
+        var vectorB = Vector<double>.Build.Dense(new double[] { 1, 2, 3 });
+
+        // Solve the system Ax = b
+        var solution = matrixA.Solve(vectorB);
+        Console.WriteLine("Solution to Ax = b:");
+        Console.WriteLine(solution);
+
     }
 
     /*  OLD VERSION, DOES NOT WORK
