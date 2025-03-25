@@ -16,21 +16,26 @@ input = "1113122113"
 partOne = 0
 partTwo = 0
 
-result = ""
-copy = input[0]
-copies = 1
-for c in input[1:]:
-    if copy == c:
-        copies+=1
-    else:
-        result += str(copies) + copy
-        copy = c
-        copies = 1
-result += str(copies) + copy
+def lookAndSay(result):
+    copy = input[0]
+    copies = 1
+    for c in input[1:]:
+        if copy == c:
+            copies+=1
+        else:
+            result += str(copies) + copy
+            copy = c
+            copies = 1
+    result += str(copies) + copy
+    return result
 
-partOne = int(result)
+result = input
+for i in range(40):
+    result = lookAndSay(result)
 
-print(f"\nPart One: {partOne}")
+partOne = len(result)
+
+print(f"Part One: {partOne}")
 print(f"Part Two: {partTwo}")
 
 elapsed_time = time.time() - start_time
