@@ -16,24 +16,28 @@ input = "1113122113"
 partOne = 0
 partTwo = 0
 
-def lookAndSay(result):
-    copy = input[0]
+def lookAndSay(res):
+    result = []
+    copy = res[0]
     copies = 1
-    for c in input[1:]:
+    for c in res[1:]:
         if copy == c:
             copies+=1
         else:
-            result += str(copies) + copy
+            result.append(str(copies) + copy)
             copy = c
             copies = 1
-    result += str(copies) + copy
-    return result
+    result.append(str(copies) + copy)
+    return ''.join(result)
 
 result = input
-for i in range(40):
+for i in range(50):
+    print(f"Iterating {i+1}")
     result = lookAndSay(result)
+    if i == 39:
+        partOne = len(result)
 
-partOne = len(result)
+partTwo = len(result)
 
 print(f"Part One: {partOne}")
 print(f"Part Two: {partTwo}")
