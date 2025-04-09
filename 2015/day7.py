@@ -1,4 +1,5 @@
 import time
+import re
 
 print("\nAdvent of Code 2015, Day SEVEN")
 
@@ -21,10 +22,20 @@ lines = [
 
 wires = { }
 
+def emulate(input, out):
+    print(input)
+    print(out)
+    if input.isdigit():
+        print(f"{input} is digit")
+    elif input.startswith("NOT "):
+        print(f"{input} starts with NOT ")
+    else:
+        ...
+
 for line in lines:
-    split = line.split(" ")
-    for s in split:
-        print(s)
+    match = re.match(r"(.*) -> (\w+)", line)
+    emulate(match.group(1), match.group(2))
+
 
 print(f"Part One: {0}")
 print(f"Part Two: {0}")
