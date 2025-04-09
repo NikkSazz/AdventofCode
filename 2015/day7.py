@@ -23,19 +23,26 @@ lines = [
 wires = { }
 
 def emulate(input, out):
-    print(input)
-    print(out)
     if input.isdigit():
-        print(f"{input} is digit")
+        #print(f"{input} is digit")
+        wires[out] = int(input)
     elif input.startswith("NOT "):
-        print(f"{input} starts with NOT ")
+        #print(f"{input} starts with NOT ")
+        wires[out] = ~wires[input[4:]]
     else:
-        ...
+        operation = input.split(" ")
+        print(f"Operand: {operation[0]} {operation[1]} {operation[2]}")
+        
+        if operation[1] == "AND":
+            ...
+
+    print(out)
 
 for line in lines:
     match = re.match(r"(.*) -> (\w+)", line)
     emulate(match.group(1), match.group(2))
 
+print(wires)
 
 print(f"Part One: {0}")
 print(f"Part Two: {0}")
