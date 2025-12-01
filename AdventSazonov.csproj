@@ -106,6 +106,7 @@
     <Compile Include="2024\day9.cs" />
     <Compile Include="2024\day2.cs" />
     <Compile Include="2024\day1.cs" />
+    <Compile Include="2025\main2025.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="2024\Inputs\8.txt" />

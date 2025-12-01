@@ -4,16 +4,16 @@ using AdventSazonov.Solution;
 using System;
 using System.IO;
 
-public class main
+public class Main2024
 {
     static void Main()
     {
-        /*
+
         Console.Write("Which day would you like to see: ");
         var request = Console.ReadLine();
         int dayRequest = int.Parse(request);
-        */
-        int dayRequest = 13;
+
+        // int dayRequest = 13;
         switch (dayRequest - 1)
         {
             case 0:
