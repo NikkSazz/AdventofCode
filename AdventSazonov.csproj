@@ -100,13 +100,15 @@
     <Compile Include="2024\day5.cs" />
     <Compile Include="2024\day4.cs" />
     <Compile Include="2024\day8.cs" />
-    <Compile Include="2024\main.cs" />
+    <Compile Include="2024\main2024.cs" />
     <Compile Include="2024\day3.cs" />
     <Compile Include="2024\twentytwo.cs" />
     <Compile Include="2024\day9.cs" />
     <Compile Include="2024\day2.cs" />
     <Compile Include="2024\day1.cs" />
     <Compile Include="2025\main2025.cs" />
+    <Compile Include="2025\One.cs" />
+    <Compile Include="main.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="2024\Inputs\8.txt" />

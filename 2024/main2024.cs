@@ -6,7 +6,7 @@ using System.IO;
 
 public class Main2024
 {
-    static void Main()
+    public static void Start()
     {
 
         Console.Write("Which day would you like to see: ");
